@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		DAD98F6D2025D96C006BE640 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD98F6C2025D96C006BE640 /* AppDelegate.swift */; };
-		DAD98F6F2025D96C006BE640 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD98F6E2025D96C006BE640 /* ViewController.swift */; };
+		DAD98F6F2025D96C006BE640 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD98F6E2025D96C006BE640 /* ProductsViewController.swift */; };
 		DAD98F722025D96C006BE640 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD98F702025D96C006BE640 /* Main.storyboard */; };
 		DAD98F742025D96C006BE640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD98F732025D96C006BE640 /* Assets.xcassets */; };
 		DAD98F772025D96C006BE640 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD98F752025D96C006BE640 /* LaunchScreen.storyboard */; };
+		DAD98F862025DD67006BE640 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD98F852025DD67006BE640 /* Transaction.swift */; };
+		DAD98F8A2025DF9F006BE640 /* rates.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD98F882025DF9F006BE640 /* rates.plist */; };
+		DAD98F8B2025DF9F006BE640 /* transactions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD98F892025DF9F006BE640 /* transactions.plist */; };
+		DAD98F8E2025F36B006BE640 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD98F8C2025F36B006BE640 /* ProductCell.swift */; };
+		DAD98F8F2025F36B006BE640 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAD98F8D2025F36B006BE640 /* ProductCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DAD98F692025D96C006BE640 /* TransactionViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransactionViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD98F6C2025D96C006BE640 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DAD98F6E2025D96C006BE640 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DAD98F6E2025D96C006BE640 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		DAD98F712025D96C006BE640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAD98F732025D96C006BE640 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAD98F762025D96C006BE640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAD98F782025D96C006BE640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAD98F852025DD67006BE640 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		DAD98F882025DF9F006BE640 /* rates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = rates.plist; sourceTree = "<group>"; };
+		DAD98F892025DF9F006BE640 /* transactions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = transactions.plist; sourceTree = "<group>"; };
+		DAD98F8C2025F36B006BE640 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		DAD98F8D2025F36B006BE640 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,67 @@
 		DAD98F6B2025D96C006BE640 /* TransactionViewer */ = {
 			isa = PBXGroup;
 			children = (
-				DAD98F6C2025D96C006BE640 /* AppDelegate.swift */,
-				DAD98F6E2025D96C006BE640 /* ViewController.swift */,
+				DAD98F872025DF8F006BE640 /* Resources */,
+				DAD98F752025D96C006BE640 /* LaunchScreen.storyboard */,
+				DAD98F7E2025DA28006BE640 /* Source */,
 				DAD98F702025D96C006BE640 /* Main.storyboard */,
 				DAD98F732025D96C006BE640 /* Assets.xcassets */,
-				DAD98F752025D96C006BE640 /* LaunchScreen.storyboard */,
 				DAD98F782025D96C006BE640 /* Info.plist */,
 			);
 			path = TransactionViewer;
+			sourceTree = "<group>";
+		};
+		DAD98F7E2025DA28006BE640 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DAD98F842025DD0D006BE640 /* Model */,
+				DAD98F812025DA77006BE640 /* Views */,
+				DAD98F802025DA4F006BE640 /* ViewControllers */,
+				DAD98F7F2025DA44006BE640 /* Core */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		DAD98F7F2025DA44006BE640 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DAD98F6C2025D96C006BE640 /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DAD98F802025DA4F006BE640 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DAD98F6E2025D96C006BE640 /* ProductsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DAD98F812025DA77006BE640 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DAD98F8C2025F36B006BE640 /* ProductCell.swift */,
+				DAD98F8D2025F36B006BE640 /* ProductCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DAD98F842025DD0D006BE640 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAD98F852025DD67006BE640 /* Transaction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAD98F872025DF8F006BE640 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DAD98F882025DF9F006BE640 /* rates.plist */,
+				DAD98F892025DF9F006BE640 /* transactions.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +186,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD98F8B2025DF9F006BE640 /* transactions.plist in Resources */,
+				DAD98F8A2025DF9F006BE640 /* rates.plist in Resources */,
 				DAD98F772025D96C006BE640 /* LaunchScreen.storyboard in Resources */,
+				DAD98F8F2025F36B006BE640 /* ProductCell.xib in Resources */,
 				DAD98F742025D96C006BE640 /* Assets.xcassets in Resources */,
 				DAD98F722025D96C006BE640 /* Main.storyboard in Resources */,
 			);
@@ -136,7 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD98F6F2025D96C006BE640 /* ViewController.swift in Sources */,
+				DAD98F6F2025D96C006BE640 /* ProductsViewController.swift in Sources */,
+				DAD98F8E2025F36B006BE640 /* ProductCell.swift in Sources */,
+				DAD98F862025DD67006BE640 /* Transaction.swift in Sources */,
 				DAD98F6D2025D96C006BE640 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QRB7HJ764Q;
+				DEVELOPMENT_TEAM = NFW59Q7524;
 				INFOPLIST_FILE = TransactionViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "One-Only.TransactionViewer";
@@ -290,7 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QRB7HJ764Q;
+				DEVELOPMENT_TEAM = NFW59Q7524;
 				INFOPLIST_FILE = TransactionViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "One-Only.TransactionViewer";
