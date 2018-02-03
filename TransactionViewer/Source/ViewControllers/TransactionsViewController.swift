@@ -50,6 +50,14 @@ extension TransactionsViewController: UITableViewDataSource {
     
 }
 
+extension TransactionsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return totalSum()
+    }
+    
+}
+
 extension TransactionsViewController {
     
     func convertSymbol(from currency: String) -> String {
@@ -85,6 +93,18 @@ extension TransactionsViewController {
         }
 
         return 1.0
+    }
+    
+    func totalSum() -> String {
+        var sum = 0.0
+        guard let transactions = transactions else { fatalError() }
+
+        for transaction in transactions {
+            let coeff = coefficient(of: transaction)
+            sum += (transaction.amount as NSString).doubleValue * coeff
+        }
+        
+        return "Total: £\(sum)"
     }
     
 }
