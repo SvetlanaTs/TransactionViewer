@@ -17,6 +17,8 @@
 		DAD98F8B2025DF9F006BE640 /* transactions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD98F892025DF9F006BE640 /* transactions.plist */; };
 		DAD98F8E2025F36B006BE640 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD98F8C2025F36B006BE640 /* ProductCell.swift */; };
 		DAD98F8F2025F36B006BE640 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAD98F8D2025F36B006BE640 /* ProductCell.xib */; };
+		DAD98F912025F591006BE640 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD98F902025F591006BE640 /* TransactionsViewController.swift */; };
+		DAD98F9B20260B52006BE640 /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD98F9A20260B52006BE640 /* Rates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		DAD98F892025DF9F006BE640 /* transactions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = transactions.plist; sourceTree = "<group>"; };
 		DAD98F8C2025F36B006BE640 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		DAD98F8D2025F36B006BE640 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		DAD98F902025F591006BE640 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		DAD98F9A20260B52006BE640 /* Rates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD98F6E2025D96C006BE640 /* ProductsViewController.swift */,
+				DAD98F902025F591006BE640 /* TransactionsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -104,8 +109,7 @@
 		DAD98F812025DA77006BE640 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DAD98F8C2025F36B006BE640 /* ProductCell.swift */,
-				DAD98F8D2025F36B006BE640 /* ProductCell.xib */,
+				DAD98F932025F5DE006BE640 /* ProductCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD98F852025DD67006BE640 /* Transaction.swift */,
+				DAD98F9A20260B52006BE640 /* Rates.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +130,15 @@
 				DAD98F892025DF9F006BE640 /* transactions.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DAD98F932025F5DE006BE640 /* ProductCell */ = {
+			isa = PBXGroup;
+			children = (
+				DAD98F8C2025F36B006BE640 /* ProductCell.swift */,
+				DAD98F8D2025F36B006BE640 /* ProductCell.xib */,
+			);
+			path = ProductCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +217,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAD98F6F2025D96C006BE640 /* ProductsViewController.swift in Sources */,
+				DAD98F9B20260B52006BE640 /* Rates.swift in Sources */,
 				DAD98F8E2025F36B006BE640 /* ProductCell.swift in Sources */,
 				DAD98F862025DD67006BE640 /* Transaction.swift in Sources */,
 				DAD98F6D2025D96C006BE640 /* AppDelegate.swift in Sources */,
+				DAD98F912025F591006BE640 /* TransactionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

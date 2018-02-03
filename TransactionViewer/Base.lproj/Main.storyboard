@@ -51,6 +51,9 @@
                                                 <constraint firstItem="CKp-cx-g70" firstAttribute="baseline" secondItem="tsa-z4-lMV" secondAttribute="baseline" id="fFS-zq-0sz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="DJo-PJ-pAN" kind="show" identifier="SEGUE_ID" id="fMf-Tu-MwQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -77,6 +80,50 @@
             </objects>
             <point key="canvasLocation" x="668" y="67.916041979010501"/>
         </scene>
+        <!--Transactions View Controller-->
+        <scene sceneID="GaK-Gj-PmW">
+            <objects>
+                <viewController id="DJo-PJ-pAN" customClass="TransactionsViewController" customModule="TransactionViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="36o-2l-dgs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cPc-0j-B6S">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KwY-Q5-saj" customClass="ProductCell" customModule="TransactionViewer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KwY-Q5-saj" id="bdm-SS-TB4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DJo-PJ-pAN" id="hV7-9V-Hii"/>
+                                    <outlet property="delegate" destination="DJo-PJ-pAN" id="Thu-2H-ddo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cPc-0j-B6S" firstAttribute="trailing" secondItem="bPw-Pe-6t0" secondAttribute="trailing" id="8Q8-gE-Stu"/>
+                            <constraint firstItem="cPc-0j-B6S" firstAttribute="bottom" secondItem="bPw-Pe-6t0" secondAttribute="bottom" id="BOa-Zu-xnd"/>
+                            <constraint firstItem="cPc-0j-B6S" firstAttribute="top" secondItem="36o-2l-dgs" secondAttribute="top" id="aUv-4g-zdu"/>
+                            <constraint firstItem="cPc-0j-B6S" firstAttribute="leading" secondItem="bPw-Pe-6t0" secondAttribute="leading" id="u5k-L3-aWA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bPw-Pe-6t0"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="cPc-0j-B6S" id="Ouj-jY-Jzt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jdg-CP-eVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687" y="68"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="D53-Rz-p87">
             <objects>
@@ -93,7 +140,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkw-9o-GLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="68"/>
+            <point key="canvasLocation" x="-33" y="68"/>
         </scene>
     </scenes>
 </document>
