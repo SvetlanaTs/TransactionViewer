@@ -10,18 +10,22 @@ import UIKit
 
 class TransactionsViewController: UIViewController {
 
-    var sku: String?
-    var transactions: [Transaction]?
+    var sku = ""
+    var transactions = [Transaction]()
+
     var rates = RateParser.rates
+    var info: (String, [Transaction])?
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let sku = sku else { fatalError() }
+        guard let info = info else { fatalError() }
+        sku = info.0
+        transactions = info.1
+
         navigationItem.title = "Transactions for \(sku)"
-        tableView.register(UINib.init(nibName: ProductCell.identifier, bundle: nil), forCellReuseIdentifier: ProductCell.identifier)
     }
 
 }
@@ -29,14 +33,12 @@ class TransactionsViewController: UIViewController {
 extension TransactionsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let transactions = transactions else { fatalError() }
         return transactions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
         
-        guard let transactions = transactions else { fatalError() }
         let coeff = coefficient(of: transactions[indexPath.row])
         let amount = transactions[indexPath.row].amount
         let currency = convertSymbol(from: transactions[indexPath.row].currency)
@@ -97,7 +99,6 @@ extension TransactionsViewController {
     
     func totalSum() -> String {
         var sum = 0.0
-        guard let transactions = transactions else { fatalError() }
 
         for transaction in transactions {
             let coeff = coefficient(of: transaction)

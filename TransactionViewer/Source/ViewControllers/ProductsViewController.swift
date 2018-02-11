@@ -16,14 +16,13 @@ class ProductsViewController: UIViewController {
     var selectedRow = 0
     
     let SEGUE_ID = "SEGUE_ID"
+    var info = ("", [Transaction]())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         keys = Array(transactions.keys.map{ $0 })
         values = Array(transactions.values.map{ $0 })
-        
-        tableView.register(UINib.init(nibName: ProductCell.identifier, bundle: nil), forCellReuseIdentifier: ProductCell.identifier)
     }
 
 }
@@ -50,14 +49,16 @@ extension ProductsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        selectedRow = indexPath.row
-        performSegue(withIdentifier: SEGUE_ID, sender: self)
+        info = (keys[indexPath.row], values[indexPath.row])
+        
+        performSegue(withIdentifier: SEGUE_ID, sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationController = segue.destination as! TransactionsViewController
-        destinationController.sku = keys[selectedRow]
-        destinationController.transactions = values[selectedRow]
+        if segue.identifier == SEGUE_ID {
+            let destinationController = segue.destination as! TransactionsViewController
+            destinationController.info = info
+        }
     }
     
 }
